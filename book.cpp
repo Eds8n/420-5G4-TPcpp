@@ -63,3 +63,17 @@ void Book::setBorrowerId(const string& id) {
 }
 
 
+
+// Emprunter et retourner des livres
+void Book::checkOut(const string& borrowerId) {
+    if (this-> isAvailable) {
+        this->borrowerId = borrowerId;
+        this->isAvailable = false;
+    }
+}
+
+void Book::returnBook() {
+    this-> isAvailable = true;
+    this->borrowerId = "";
+}
+
