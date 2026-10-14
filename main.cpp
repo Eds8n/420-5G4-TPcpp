@@ -108,8 +108,23 @@ int main(int argc, char* argv[]) {
                 string author = getInput("Entrez l'auteur du livre : ");
                 string isbn = getInput("Entrez l'ISBN du livre : ");
                 
-                if (library.findBookByISBN(isbn)) {
-                    cout << "Erreur : Un livre avec l'ISBN " << isbn << " existe déjà.\n";
+                bool doublon = false;
+                
+                if (library.findBookByISBN(isbn) != nullptr) {
+                    doublon = true;
+                } 
+                
+                vector<Book*> livres = library.searchBooksByTitle(title); 
+
+                for (Book* livre : livres) {
+                    if (livre->getTitle() == title &&
+                    livre->getAuthor() == author) {
+                        doublon = true;
+                        break;
+                    }
+                }
+                if (doublon) {
+                    cout << "Erreur : Ce livre existe deja dans la bibliotheque.\n";
                 } else {
                     Book newBook(title, author, isbn);
                     library.addBook(newBook);
