@@ -63,7 +63,6 @@ void Book::setBorrowerId(const string& id) {
 }
 
 
-
 // Emprunter et retourner des livres
 void Book::checkOut(const string& borrowerId) {
     if (this-> isAvailable) {
@@ -76,4 +75,17 @@ void Book::returnBook() {
     this-> isAvailable = true;
     this->borrowerId = "";
 }
+
+// afficher les livres en string
+string Book::toString() const {
+    string resultat = "Titre : " + title + "\nAutheur : " + author + "\nISBN : " + isbn + "\ndisponibilite : " + (isAvailable ? "Disponible" : "Pas Disponible");
+    return resultat;
+}
+
+// affichage des donnees en FileFormat
+string Book::toFileFormat() const {
+    return title + "|" + author + "|" + isbn + "|" + (isAvailable ? "1|" : "0|" + borrowerId);
+}
+
+
 
