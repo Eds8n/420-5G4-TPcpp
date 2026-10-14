@@ -162,4 +162,8 @@ CMakeFiles/bibliotheque.dir/book.cpp.o: \
  /usr/include/c++/14/bits/basic_ios.tcc /usr/include/c++/14/ostream \
  /usr/include/c++/14/bits/ostream.tcc \
  /usr/include/c++/14/bits/istream.tcc \
- /usr/include/c++/14/bits/sstream.tcc
+ /usr/include/c++/14/bits/sstream.tcc /usr/include/c++/14/vector \
+ /usr/include/c++/14/bits/stl_uninitialized.h \
+ /usr/include/c++/14/bits/stl_vector.h \
+ /usr/include/c++/14/bits/stl_bvector.h \
+ /usr/include/c++/14/bits/vector.tcc

@@ -1,5 +1,6 @@
 #include "book.h"
 #include <sstream>
+#include <vector>
 
 // constructeurs
 
@@ -88,4 +89,27 @@ string Book::toFileFormat() const {
 }
 
 
+void Book::fromFileFormat(const string& line) {
+    vector<string> donnees;
+    stringstream ss(line);
+    string texte;
+
+    while (getline(ss, texte, '|')) {
+        donnees.push_back(texte);
+    }
+
+    if (!line.empty() && line.back() == '|') {
+        donnees.push_back("");
+    }
+
+    if (donnees.size() != 5) {
+        return;
+    }
+
+    title = donnees[0];
+    author = donnees[1];
+    isbn = donnees[2];
+    isAvailable = (donnees[3] == "1");
+    borrowerId = donnees[4];
+}
 
