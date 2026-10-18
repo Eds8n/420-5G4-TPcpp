@@ -1,6 +1,7 @@
 #include "book.h"
 #include <sstream>
 #include <vector>
+#include "user.h"
 
 // constructeurs
 
@@ -87,6 +88,9 @@ string Book::toString() const {
 string Book::toFileFormat() const {
     return title + "|" + author + "|" + isbn + "|" + (isAvailable ? "1|" : "0|" + borrowerId);
 }
+
+
+
 
 
 void Book::fromFileFormat(const string& line) {

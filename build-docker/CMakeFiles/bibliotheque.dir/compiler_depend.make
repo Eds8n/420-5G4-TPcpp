@@ -207,7 +207,8 @@ CMakeFiles/bibliotheque.dir/book.cpp.o: /workspaces/420-5G4-TPcpp/book.cpp \
   /usr/lib/linux/uapi/x86/asm/posix_types.h \
   /usr/lib/linux/uapi/x86/asm/posix_types_64.h \
   /usr/lib/linux/uapi/x86/asm/types.h \
-  /workspaces/420-5G4-TPcpp/book.h
+  /workspaces/420-5G4-TPcpp/book.h \
+  /workspaces/420-5G4-TPcpp/user.h
 
 CMakeFiles/bibliotheque.dir/filemanager.cpp.o: /workspaces/420-5G4-TPcpp/filemanager.cpp \
   /usr/include/alloca.h \
@@ -1229,8 +1230,6 @@ CMakeFiles/bibliotheque.dir/filemanager.cpp.o:
 
 /workspaces/420-5G4-TPcpp/library.cpp:
 
-/workspaces/420-5G4-TPcpp/user.h:
-
 /usr/include/c++/14/pstl/pstl_config.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
@@ -1424,6 +1423,8 @@ CMakeFiles/bibliotheque.dir/book.cpp.o:
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/alloca.h:
+
+/workspaces/420-5G4-TPcpp/user.h:
 
 /usr/include/c++/14/bits/predefined_ops.h:
 

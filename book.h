@@ -12,6 +12,7 @@ private:
     string isbn;
     bool isAvailable;
     string borrowerId;
+    
 
 public:
     // Constructors
@@ -24,6 +25,8 @@ public:
     string getISBN() const;
     bool getAvailability() const;
     string getBorrowerId() const;
+    
+
 
     // Setters
     void setTitle(const string& title);

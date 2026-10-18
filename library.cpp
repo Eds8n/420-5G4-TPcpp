@@ -51,6 +51,10 @@ vector<Book*> Library::searchBooksByTitle(const string& title) {
             results.push_back(book.get());
         }
     }
+    sort(results.begin(), results.end(), [](Book* a, Book* b) {
+        return a->getTitle() < b->getTitle();
+    });
+
     return results;
 }
 
@@ -68,6 +72,11 @@ vector<Book*> Library::searchBooksByAuthor(const string& author) {
             results.push_back(book.get());
         }
     }
+
+    sort(results.begin(), results.end(), [](Book* a, Book* b) {
+    return a->getAuthor() < b->getAuthor();
+    });
+    
     return results;
 }
 
@@ -155,6 +164,13 @@ void Library::displayAllBooks() {
     
     cout << "\n=== TOUS LES LIVRES ===\n";
     for (size_t i = 0; i < books.size(); ++i) {
+        string id = books[i]->getBorrowerId();
+        User* utilisateur = findUserById(id);
+
+        if (utilisateur != nullptr) {
+        cout << "Emprunteur : " << utilisateur->getName() << endl;
+    }
+
         cout << "\nLivre " << (i + 1) << " :\n";
         cout << books[i]->toString() << "\n";
         cout << "-------------------------\n";
