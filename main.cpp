@@ -151,6 +151,7 @@ int main(int argc, char* argv[]) {
                 string isbn = getInput("Entrez l'ISBN du livre à supprimer : ");
                 
                 if (library.removeBook(isbn)) {
+                    journal.log("SUPPRESSION LIVRE", isbn);
                     cout << "Livre supprimé avec succès !\n";
                 } else {
                     cout << "Livre non trouvé.\n";
@@ -230,6 +231,11 @@ int main(int argc, char* argv[]) {
                 string userId = getInput("Entrez l'ID de l'utilisateur : ");
                 
                 if (library.checkOutBook(isbn, userId)) {
+                    Book* livre = library.findBookByISBN(isbn);
+
+                    if (livre != nullptr) {
+                        journal.log("EMPRUNT", livre->toFileFormat());
+                    }
                     cout << "Livre emprunté avec succès !\n";
                 } else {
                     cout << "Erreur : Impossible d'emprunter le livre. Vérifiez l'ISBN, l'ID utilisateur et la disponibilité du livre.\n";
