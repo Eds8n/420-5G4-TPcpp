@@ -182,6 +182,7 @@ CMakeFiles/bibliotheque.dir/main.cpp.o: \
  /usr/include/c++/14/bits/unique_ptr.h \
  /usr/include/c++/14/ext/aligned_buffer.h \
  /usr/include/c++/14/bits/fs_dir.h /usr/include/c++/14/bits/fs_ops.h \
+ /workspaces/420-5G4-TPcpp/activitylog.h /workspaces/420-5G4-TPcpp/book.h \
  /workspaces/420-5G4-TPcpp/library.h /usr/include/c++/14/vector \
  /usr/include/c++/14/bits/stl_uninitialized.h \
  /usr/include/c++/14/bits/stl_vector.h \
@@ -196,5 +197,4 @@ CMakeFiles/bibliotheque.dir/main.cpp.o: \
  /usr/include/c++/14/backward/auto_ptr.h \
  /usr/include/c++/14/pstl/glue_memory_defs.h \
  /usr/include/c++/14/pstl/execution_defs.h \
- /workspaces/420-5G4-TPcpp/book.h /workspaces/420-5G4-TPcpp/user.h \
- /workspaces/420-5G4-TPcpp/filemanager.h
+ /workspaces/420-5G4-TPcpp/user.h /workspaces/420-5G4-TPcpp/filemanager.h

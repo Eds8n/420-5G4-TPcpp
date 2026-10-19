@@ -3,6 +3,10 @@
 #include <string>
 #include <filesystem>
 
+// appel de activitylog.h et book.h ici
+#include "activitylog.h"
+#include "book.h"
+
 #include "library.h"
 #include "filemanager.h"
 
@@ -83,6 +87,13 @@ int main(int argc, char* argv[]) {
     Library library;
     FileManager fileManager(booksFile, usersFile);
     
+    // creation du journal d'activites au cas ou qui ne soit pas creer  
+    string logPath = dataDir.empty()
+    ?"activity.log"
+    :(filesystem::path(dataDir) / "activity.log").string();
+
+    ActivityLog journal(logPath);
+
     // Load existing data
     cout << "Chargement des données de la bibliothèque...\n";
     fileManager.loadLibraryData(library);
@@ -128,6 +139,8 @@ int main(int argc, char* argv[]) {
                 } else {
                     Book newBook(title, author, isbn);
                     library.addBook(newBook);
+                    // ici on ajoute les livres dans le journal
+                    journal.log("AJOUT LIVRE", newBook.toFileFormat());
                     cout << "Livre ajouté avec succès !\n";
                 }
                 pauseForInput();
